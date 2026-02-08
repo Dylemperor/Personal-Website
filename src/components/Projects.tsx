@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Projects() {
   // Example project structure - you can customize this
   const projects = [
