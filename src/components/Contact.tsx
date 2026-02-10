@@ -7,14 +7,33 @@ export default function Contact() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    // You can integrate with a service like Formspree, EmailJS, or your own backend
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I\'ll get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value
+    };
+  
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+  
+    const result = await res.json();
+  
+    if (result.success) {
+      alert("Message sent!");
+      e.target.reset();
+    } else {
+      alert("Something went wrong");
+    }
+  };
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
