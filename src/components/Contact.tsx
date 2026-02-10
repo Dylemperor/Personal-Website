@@ -7,13 +7,16 @@ export default function Contact() {
     message: '',
   })
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value
+    const formData = new FormData(e.currentTarget);
+
+
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string
     };
   
     const res = await fetch("/api/contact", {
@@ -21,14 +24,12 @@ export default function Contact() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(data)
     });
   
     const result = await res.json();
-  
     if (result.success) {
       alert("Message sent!");
-      e.target.reset();
     } else {
       alert("Something went wrong");
     }
