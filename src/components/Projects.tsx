@@ -6,19 +6,13 @@ export default function Projects() {
       description: 'A website for a local business to showcase their products and services at locations who host them on their TV screens, all powered by Hidden Gemz.',
       technologies: ['React', 'C#', 'MySQL', '.NET Core'],
       link: 'https://hiddengemz.tv',
-    },
-    {
-      title: 'Project 2',
-      description: 'A brief description of your project goes here.',
-      technologies: ['Next.js', 'Node.js', 'MongoDB'],
-      link: '#',
-    },
-    {
-      title: 'Project 3',
-      description: 'A brief description of your project goes here.',
-      technologies: ['Python', 'Django', 'PostgreSQL'],
-      link: '#',
-    },
+    }
+  //   {
+  //     title: 'Project 2',
+  //     description: 'A brief description of your project goes here.',
+  //     technologies: ['Next.js', 'Node.js', 'MongoDB'],
+  //     link: '#',
+  //   },
   ]
 
   return (
