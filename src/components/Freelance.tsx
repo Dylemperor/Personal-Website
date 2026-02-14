@@ -134,7 +134,7 @@ export default function Freelance() {
               Get a Quote
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:dylanacowelll@gmail.com"
               className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200"
             >
               Email Me
