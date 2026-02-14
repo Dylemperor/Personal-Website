@@ -30,6 +30,12 @@ export default function Contact() {
     const result = await res.json();
     if (result.success) {
       alert("Message sent!");
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+      
     } else {
       alert("Something went wrong");
     }
